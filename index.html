@@ -1,617 +1,797 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO e Meta Tags -->
-    <title>Almas de Pombagira - Portal Oficial | Alexia Rosa de Fogo</title>
-    <meta name="description" content="Cruze os caminhos da Pomba-gira neste portal oficial. Conteúdo sobre espiritualidade, simpatias e resistência. Respeite quem sou, para eu respeitar quem você é.">
-    
-    <!-- Open Graph / Redes Sociais -->
-    <meta property="og:title" content="Almas de Pombagira - Portal Oficial">
-    <meta property="og:description" content="Cruze os caminhos da Pomba-gira. Respeito mútuo é a lei.">
-    <meta property="og:image" content="logo.png">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- Tema para navegadores mobile -->
-    <meta name="theme-color" content="#AA0000">
-    
-    <style>
-        /* ==================== VARIÁVEIS CSS ==================== */
-        :root {
-            --cor-dourado: #FFD700;
-            --cor-vermelho: #AA0000;
-            --cor-vermelho-escuro: #800000;
-            --cor-branco: #FFFFFF;
-            --cor-cinza: #E0E0E0;
-            --cor-preto-alpha: rgba(0, 0, 0, 0.85);
-            
-            /* Cores das Redes Sociais */
-            --cor-tiktok: #FE2C55;
-            --cor-youtube: #FF0000;
-            --cor-instagram: #E1306C;
-            --cor-threads: #FFFFFF;
-            --cor-kwai: #FF6A00;
-            --cor-telegram: #229ED9;
-            --cor-whatsapp: #25D366;
-            --cor-discord: #5865F2;
-            --cor-pinterest: #E60023;
-            
-            /* Efeitos */
-            --transicao: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --blur-fundo: 10px;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* ==================== RESET ==================== */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>Almas de Pombagira | Portal Oficial</title>
+<meta name="description" content="Portal oficial Almas de Pombagira. Espiritualidade, estética ritualística e resistência.">
+<meta name="theme-color" content="#5a001a">
 
-        /* ==================== BODY E FUNDO ==================== */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--cor-branco);
-            background: var(--cor-preto-alpha);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            overflow-x: hidden;
-            position: relative;
-        }
+<!-- Ícones para redes sociais -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        /* Fundo gradiente como fallback */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(135deg, #1a0000 0%, #330000 50%, #1a0000 100%);
-            z-index: -2;
-        }
+<style>
+:root {
+  --roxo-profundo: #3a0029;
+  --roxo-vibrante: #7a1f7c;
+  --vermelho-intenso: #a50021;
+  --vermelho-brilhante: #d1003a;
+  --dourado: #d4af37;
+  --preto: #0a0005;
+  --preto-sombra: #1a0010;
+  --branco: #ffffff;
+  --vidro: rgba(255,255,255,0.08);
+  --vidro-forte: rgba(255,255,255,0.15);
+  --borda: rgba(255,255,255,0.2);
+  --sombra-pesada: 0 15px 35px rgba(0,0,0,0.6);
+  --sombra-neon: 0 0 20px rgba(209,0,58,0.5);
 
-        /* Imagem de fundo com overlay otimizado */
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: 
-                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
-                url('fundo-pombagira.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            z-index: -1;
-        }
+  --gradiente-bg: linear-gradient(135deg, var(--preto) 0%, var(--roxo-profundo) 40%, var(--preto-sombra) 100%);
+  --gradiente-card: linear-gradient(145deg, rgba(122,31,124,0.15) 0%, rgba(165,0,33,0.1) 100%);
+}
 
-        /* ==================== CONTAINER PRINCIPAL ==================== */
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-            animation: fadeInUp 0.8s var(--transicao);
-        }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(30px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--branco);
+  background: var(--gradiente-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  position: relative;
+  overflow-x: hidden;
+}
 
-        /* ==================== PERFIL ==================== */
-        .profile-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
+/* Elementos decorativos de fundo */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(122,31,124,0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(165,0,33,0.15) 0%, transparent 50%);
+  z-index: -1;
+}
 
-        .profile-pic {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid var(--cor-dourado);
-            box-shadow: 
-                0 0 20px var(--cor-dourado),
-                0 4px 10px rgba(0, 0, 0, 0.3);
-            object-fit: cover;
-            transition: all var(--transicao);
-            display: block;
-        }
+.container {
+  width: 100%;
+  max-width: 650px;
+  background: var(--gradiente-card);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--borda);
+  border-radius: 32px;
+  padding: 36px 30px 40px;
+  box-shadow: 
+    var(--sombra-pesada),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  animation: aparecer 1s ease-out;
+}
 
-        .profile-pic:hover {
-            transform: scale(1.08) rotate(3deg);
-            box-shadow: 
-                0 0 30px var(--cor-dourado),
-                0 6px 15px rgba(0, 0, 0, 0.4);
-        }
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--vermelho-intenso), var(--roxo-vibrante), var(--dourado));
+  z-index: 2;
+}
 
-        /* Placeholder se imagem falhar */
-        .profile-placeholder {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--cor-vermelho-escuro), var(--cor-vermelho));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            border: 4px solid var(--cor-dourado);
-            box-shadow: 0 0 20px var(--cor-dourado);
-        }
+/* ===== Animação de entrada ===== */
+@keyframes aparecer {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
 
-        /* ==================== TÍTULOS ==================== */
-        .welcome-title {
-            color: var(--cor-dourado);
-            font-size: clamp(2em, 6vw, 2.8em);
-            margin: 20px 0 10px;
-            text-shadow: 
-                0 0 15px var(--cor-vermelho),
-                2px 2px 4px rgba(0, 0, 0, 0.5);
-            font-weight: 700;
-            letter-spacing: 2px;
-            animation: glow 3s ease-in-out infinite alternate;
-        }
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-        @keyframes glow {
-            from { text-shadow: 0 0 10px var(--cor-vermelho), 2px 2px 4px rgba(0, 0, 0, 0.5); }
-            to { text-shadow: 0 0 25px var(--cor-vermelho), 0 0 35px var(--cor-dourado), 2px 2px 4px rgba(0, 0, 0, 0.5); }
-        }
+@keyframes brilho {
+  0%, 100% { box-shadow: 0 0 10px rgba(212,175,55,0.5); }
+  50% { box-shadow: 0 0 25px rgba(212,175,55,0.8), 0 0 35px rgba(212,175,55,0.4); }
+}
 
-        .welcome-subtitle {
-            font-size: clamp(1em, 2.5vw, 1.15em);
-            color: var(--cor-cinza);
-            margin-bottom: 30px;
-            opacity: 0.95;
-            font-weight: 300;
-        }
+@keyframes pulsar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
 
-        /* ==================== MENSAGEM ==================== */
-        .message {
-            font-style: italic;
-            font-size: clamp(0.95em, 2.5vw, 1.1em);
-            color: var(--cor-cinza);
-            margin: 30px 0;
-            padding: 20px 25px;
-            border-left: 5px solid var(--cor-vermelho);
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 0 12px 12px 0;
-            position: relative;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
+/* ===== Título REDES SOCIAIS com efeito piscante ===== */
+.titulo-principal {
+  font-size: 3.2rem;
+  letter-spacing: 4px;
+  background: linear-gradient(to right, var(--dourado), var(--vermelho-brilhante), var(--roxo-vibrante));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.4);
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+  animation: piscar 3s infinite alternate, pulsarTitulo 4s infinite ease-in-out;
+}
 
-        .message::before {
-            content: '"';
-            position: absolute;
-            top: -15px;
-            left: 15px;
-            font-size: 4em;
-            color: var(--cor-vermelho);
-            opacity: 0.2;
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
+@keyframes piscar {
+  0%, 100% { 
+    opacity: 0.95;
+    text-shadow: 0 0 10px rgba(209,0,58,0.5), 0 0 20px rgba(122,31,124,0.3);
+  }
+  50% { 
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(209,0,58,0.8), 0 0 40px rgba(122,31,124,0.6), 0 0 60px rgba(212,175,55,0.3);
+  }
+}
 
-        /* ==================== LISTA DE LINKS ==================== */
-        .links-list {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-top: 35px;
-        }
+@keyframes pulsarTitulo {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
 
-        /* ==================== BOTÕES ==================== */
-        .link-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 16px 28px;
-            text-decoration: none;
-            color: var(--cor-branco);
-            font-weight: 600;
-            font-size: clamp(0.95em, 2.5vw, 1.05em);
-            border-radius: 50px;
-            border: 2px solid transparent;
-            background: var(--cor-vermelho);
-            box-shadow: var(--sombra);
-            transition: all var(--transicao);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
+.titulo-principal::before,
+.titulo-principal::after {
+  content: "✦";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--dourado);
+  font-size: 2rem;
+  animation: girar 10s infinite linear;
+}
 
-        /* Efeito shimmer */
-        .link-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
+.titulo-principal::before {
+  left: -10px;
+}
 
-        .link-button:hover::before {
-            left: 100%;
-        }
+.titulo-principal::after {
+  right: -10px;
+}
 
-        .link-button:hover {
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 
-                0 8px 20px rgba(0, 0, 0, 0.4), 
-                0 0 25px currentColor;
-            filter: brightness(1.15);
-        }
+@keyframes girar {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
 
-        .link-button:active {
-            transform: translateY(-1px) scale(0.98);
-            transition-duration: 0.1s;
-        }
+.subtitulo {
+  font-size: 1.3rem;
+  margin-bottom: 32px;
+  opacity: 0.9;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+  animation: aparecerTexto 2s ease-out;
+}
 
-        .link-button:focus-visible {
-            outline: 3px solid var(--cor-dourado);
-            outline-offset: 3px;
-        }
+@keyframes aparecerTexto {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 0.9; transform: translateY(0); }
+}
 
-        /* ==================== CORES DOS BOTÕES ==================== */
-        .tiktok { background: rgba(0, 0, 0, 0.9); border-color: var(--cor-tiktok); }
-        .tiktok:hover { background: var(--cor-tiktok); }
+/* ===== Botão especial para o site Bio ===== */
+.botao-bio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 30px;
+  margin: 0 auto 40px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  background: linear-gradient(135deg, var(--roxo-vibrante), var(--vermelho-intenso));
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 
+    0 10px 30px rgba(122,31,124,0.4),
+    0 0 0 1px rgba(212,175,55,0.3);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  max-width: 400px;
+  animation: flutuar 6s infinite ease-in-out, destaqueBio 4s infinite alternate;
+}
 
-        .youtube { background: rgba(30, 0, 0, 0.9); border-color: var(--cor-youtube); }
-        .youtube:hover { background: var(--cor-youtube); }
+@keyframes destaqueBio {
+  0%, 100% { 
+    box-shadow: 0 10px 30px rgba(122,31,124,0.4), 0 0 0 1px rgba(212,175,55,0.3);
+  }
+  50% { 
+    box-shadow: 0 15px 40px rgba(122,31,124,0.7), 0 0 20px rgba(212,175,55,0.6);
+  }
+}
 
-        .instagram { background: rgba(100, 10, 50, 0.9); border-color: var(--cor-instagram); }
-        .instagram:hover { 
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            border-color: var(--cor-branco);
-        }
+.botao-bio::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.7s ease;
+}
 
-        .threads { background: rgba(0, 0, 0, 0.95); border-color: var(--cor-threads); }
-        .threads:hover { background: #1a1a1a; }
+.botao-bio:hover::before {
+  left: 100%;
+}
 
-        .kwai { background: rgba(30, 10, 0, 0.9); border-color: var(--cor-kwai); }
-        .kwai:hover { background: var(--cor-kwai); }
+.botao-bio:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 
+    0 20px 50px rgba(122,31,124,0.8),
+    0 0 30px rgba(212,175,55,0.8);
+  background: linear-gradient(135deg, var(--vermelho-intenso), var(--roxo-vibrante));
+}
 
-        .telegram { background: rgba(0, 20, 40, 0.9); border-color: var(--cor-telegram); }
-        .telegram:hover { background: var(--cor-telegram); }
+.botao-bio i {
+  font-size: 1.8rem;
+  color: var(--dourado);
+}
 
-        .whatsapp { background: rgba(0, 30, 10, 0.9); border-color: var(--cor-whatsapp); }
-        .whatsapp:hover { background: var(--cor-whatsapp); }
+.botao-bio span {
+  position: relative;
+  z-index: 2;
+}
 
-        .discord { background: rgba(20, 20, 40, 0.9); border-color: var(--cor-discord); }
-        .discord:hover { background: var(--cor-discord); }
+/* ===== Mensagem e Botões em Destaque ===== */
+.quote {
+  font-style: italic;
+  font-size: 1.15rem;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  border-left: 4px solid;
+  border-image: linear-gradient(to bottom, var(--dourado), var(--vermelho-intenso)) 1;
+  padding: 22px 26px;
+  border-radius: 0 18px 18px 0;
+  margin-bottom: 30px;
+  position: relative;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  transition: all 0.4s ease;
+}
 
-        .pinterest { background: rgba(30, 0, 5, 0.9); border-color: var(--cor-pinterest); }
-        .pinterest:hover { background: var(--cor-pinterest); }
+.quote:hover {
+  transform: translateX(5px);
+  background: rgba(0,0,0,0.5);
+}
 
-        .meta-ai { background: rgba(0, 40, 80, 0.9); border-color: #1877F2; }
-        .meta-ai:hover { background: #1877F2; }
+.quote::before {
+  content: "✦";
+  font-size: 1.5rem;
+  color: var(--dourado);
+  opacity: 0.7;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 
-        .sora-ai { background: rgba(80, 0, 80, 0.9); border-color: #9D4EDD; }
-        .sora-ai:hover { background: #9D4EDD; }
+/* ===== Dois botões em destaque na mesma linha ===== */
+.botoes-em-linha {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
 
-        /* ==================== LOADER ==================== */
-        .loader {
-            position: fixed;
-            inset: 0;
-            background: var(--cor-preto-alpha);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 1;
-            transition: opacity 0.5s;
-            pointer-events: none;
-        }
+.botao-destaque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, rgba(122,31,124,0.8), rgba(165,0,33,0.8));
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.15);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  min-width: 200px;
+  max-width: 280px;
+}
 
-        .loader.hidden {
-            opacity: 0;
-        }
+.botao-destaque::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.7s ease;
+}
 
-        .loader-spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(255, 215, 0, 0.3);
-            border-top-color: var(--cor-dourado);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
+.botao-destaque:hover::before {
+  left: 100%;
+}
 
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+.botao-destaque:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(122,31,124,0.7), 0 0 25px rgba(212,175,55,0.5);
+}
 
-        /* ==================== RESPONSIVIDADE ==================== */
-        @media (max-width: 768px) {
-            body {
-                padding: 15px 10px;
-            }
-            
-            .profile-pic,
-            .profile-placeholder {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .links-list {
-                gap: 12px;
-            }
-            
-            .link-button {
-                padding: 14px 22px;
-            }
+.botao-destaque i {
+  font-size: 1.5rem;
+  color: var(--dourado);
+}
 
-            .message {
-                padding: 18px 20px;
-            }
-        }
+.botao-destaque span {
+  position: relative;
+  z-index: 2;
+}
 
-        @media (max-width: 480px) {
-            .welcome-title {
-                letter-spacing: 1px;
-            }
+/* ===== Grupos de Links ===== */
+.grupo-links {
+  margin-bottom: 30px;
+}
 
-            .link-button {
-                font-size: 0.95em;
-            }
-        }
+.grupo-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.4rem;
+  color: var(--dourado);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(212,175,55,0.3);
+}
 
-        /* Redução de movimento (Acessibilidade) */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
+.grupo-titulo i {
+  font-size: 1.6rem;
+}
+
+/* ===== Links ===== */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 18px 26px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  background: rgba(10,0,5,0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.7s ease;
+}
+
+.link:hover::before {
+  left: 100%;
+}
+
+.link:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.link i {
+  font-size: 1.5rem;
+  width: 30px;
+  text-align: center;
+}
+
+/* ===== Cores Específicas para cada rede ===== */
+.tiktok { border-left: 4px solid #fe2c55; }
+.tiktok:hover { box-shadow: 0 10px 25px rgba(254,44,85,0.5); background: rgba(254,44,85,0.1); }
+
+.youtube { border-left: 4px solid #ff0000; }
+.youtube:hover { box-shadow: 0 10px 25px rgba(255,0,0,0.5); background: rgba(255,0,0,0.1); }
+
+.instagram { border-left: 4px solid #e1306c; }
+.instagram:hover { box-shadow: 0 10px 25px rgba(225,48,108,0.5); background: rgba(225,48,108,0.1); }
+
+.threads { border-left: 4px solid #ffffff; }
+.threads:hover { box-shadow: 0 10px 25px rgba(255,255,255,0.5); background: rgba(255,255,255,0.1); }
+
+.telegram { border-left: 4px solid #229ed9; }
+.telegram:hover { box-shadow: 0 10px 25px rgba(34,158,217,0.5); background: rgba(34,158,217,0.1); }
+
+.whatsapp { border-left: 4px solid #25d366; }
+.whatsapp:hover { box-shadow: 0 10px 25px rgba(37,211,102,0.5); background: rgba(37,211,102,0.1); }
+
+.discord { border-left: 4px solid #5865f2; }
+.discord:hover { box-shadow: 0 10px 25px rgba(88,101,242,0.5); background: rgba(88,101,242,0.1); }
+
+.pinterest { border-left: 4px solid #e60023; }
+.pinterest:hover { box-shadow: 0 10px 25px rgba(230,0,35,0.5); background: rgba(230,0,35,0.1); }
+
+.meta { border-left: 4px solid #1877f2; }
+.meta:hover { box-shadow: 0 10px 25px rgba(24,119,242,0.5); background: rgba(24,119,242,0.1); }
+
+.sora { border-left: 4px solid #9d4edd; }
+.sora:hover { box-shadow: 0 10px 25px rgba(157,78,221,0.5); background: rgba(157,78,221,0.1); }
+
+.bluesky { border-left: 4px solid #0a7aff; }
+.bluesky:hover { box-shadow: 0 10px 25px rgba(10,122,255,0.5); background: rgba(10,122,255,0.1); }
+
+.kwai { border-left: 4px solid #ff7700; }
+.kwai:hover { box-shadow: 0 10px 25px rgba(255,119,0,0.5); background: rgba(255,119,0,0.1); }
+
+.facebook { border-left: 4px solid #1877f2; }
+.facebook:hover { box-shadow: 0 10px 25px rgba(24,119,242,0.5); background: rgba(24,119,242,0.1); }
+
+/* ===== Rodapé ===== */
+footer {
+  margin-top: 32px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 480px) {
+  .container {
+    padding: 28px 20px 32px;
+    border-radius: 24px;
+    max-width: 95%;
+  }
+  
+  .titulo-principal {
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+  }
+  
+  .botao-bio {
+    padding: 16px 22px;
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+  
+  .botoes-em-linha {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .botao-destaque {
+    min-width: 90%;
+    max-width: 90%;
+  }
+  
+  .link {
+    padding: 16px 20px;
+  }
+  
+  .grupo-titulo {
+    font-size: 1.2rem;
+  }
+}
+
+/* Efeito de partículas sutis */
+.particula {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--dourado);
+  border-radius: 50%;
+  opacity: 0.5;
+  z-index: -1;
+}
+</style>
 </head>
+
 <body>
+<!-- Partículas decorativas -->
+<div id="particulas"></div>
 
-    <!-- Loader -->
-    <div class="loader" id="loader">
-        <div class="loader-spinner"></div>
+<main class="container">
+
+  <h1 class="titulo-principal">REDES SOCIAIS</h1>
+  <p class="subtitulo">Conheça mais sobre nosso trabalho e espiritualidade</p>
+
+  <a class="botao-bio" href="https://bio.site/AlmasdePombagira" target="_blank">
+    <i class="fas fa-star"></i>
+    <span>Conheça Nosso Portal Oficial</span>
+    <i class="fas fa-external-link-alt"></i>
+  </a>
+
+  <div class="quote">
+    "Respeite quem sou, para eu respeitar quem você é."
+  </div>
+
+  <!-- Dois botões em destaque na mesma linha -->
+  <div class="botoes-em-linha">
+    <a class="botao-destaque" href="https://linktr.ee/alexiarosadefogo" target="_blank">
+      <i class="fas fa-tree"></i>
+      <span>Linktree Completo</span>
+    </a>
+    
+    <a class="botao-destaque" href="https://pombagiras.my.canva.site/" target="_blank">
+      <i class="fas fa-paint-brush"></i>
+      <span>Canva Bio Site</span>
+    </a>
+  </div>
+
+  <!-- Grupo TikTok -->
+  <div class="grupo-links">
+    <div class="grupo-titulo">
+      <i class="fab fa-tiktok"></i>
+      <h2>TikTok</h2>
+      <i class="fab fa-tiktok"></i>
     </div>
+    
+    <nav class="links">
+      <a class="link tiktok" href="https://www.tiktok.com/@espelhosdepombagira?lang=pt-BR" target="_blank">
+        <i class="fab fa-tiktok"></i>
+        <span>@espelhosdepombagira</span>
+      </a>
+      
+      <a class="link tiktok" href="https://www.tiktok.com/@almasdepombagira?lang=pt-BR" target="_blank">
+        <i class="fab fa-tiktok"></i>
+        <span>@almasdepombagira</span>
+      </a>
+      
+      <a class="link tiktok" href="https://www.tiktok.com/@alexiarosadefogo?lang=pt-BR" target="_blank">
+        <i class="fab fa-tiktok"></i>
+        <span>@alexiarosadefogo</span>
+      </a>
+      
+      <a class="link tiktok" href="https://www.tiktok.com/@alexia.melusine" target="_blank">
+        <i class="fab fa-tiktok"></i>
+        <span>@alexia.melusine</span>
+      </a>
+    </nav>
+  </div>
 
-    <main class="container">
-        <div class="profile-wrapper">
-            <img src="logo.png" 
-                 alt="Símbolo de Pombagira - Almas de Pombagira" 
-                 class="profile-pic"
-                 id="profilePic"
-                 loading="eager">
-        </div>
+  <!-- Grupo Kwai -->
+  <div class="grupo-links">
+    <div class="grupo-titulo">
+      <i class="fas fa-video"></i>
+      <h2>Kwai</h2>
+      <i class="fas fa-video"></i>
+    </div>
+    
+    <nav class="links">
+      <a class="link kwai" href="https://www.kwai.com/@AlmasdePombagira" target="_blank">
+        <i class="fas fa-play-circle"></i>
+        <span>@AlmasdePombagira</span>
+      </a>
+      
+      <a class="link kwai" href="https://www.kwai.com/@AlexiaRosadeFogo" target="_blank">
+        <i class="fas fa-fire"></i>
+        <span>@AlexiaRosadeFogo</span>
+      </a>
+      
+      <a class="link kwai" href="https://www.kwai.com/@espelhosdepombagira" target="_blank">
+        <i class="fas fa-eye"></i>
+        <span>@espelhosdepombagira</span>
+      </a>
+    </nav>
+  </div>
 
-        <h1 class="welcome-title">Laroyê!</h1>
-        <p class="welcome-subtitle">Bem-vindo(a) ao cruzamento dos meus caminhos.</p>
+  <!-- Outras Redes Sociais -->
+  <div class="grupo-links">
+    <div class="grupo-titulo">
+      <i class="fas fa-globe"></i>
+      <h2>Outras Redes</h2>
+      <i class="fas fa-globe"></i>
+    </div>
+    
+    <nav class="links">
+      <a class="link youtube" href="https://www.youtube.com/@almasdepombagira" target="_blank">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube</span>
+      </a>
+      
+      <a class="link instagram" href="https://www.instagram.com/alexiamelusine/" target="_blank">
+        <i class="fab fa-instagram"></i>
+        <span>@alexiamelusine</span>
+      </a>
+      
+      <a class="link instagram" href="https://www.instagram.com/almasdepombagira" target="_blank">
+        <i class="fab fa-instagram"></i>
+        <span>@almasdepombagira</span>
+      </a>
+      
+      <a class="link facebook" href="https://www.facebook.com/alexia.tsan.7" target="_blank">
+        <i class="fab fa-facebook"></i>
+        <span>Facebook</span>
+      </a>
+      
+      <a class="link threads" href="https://www.threads.net/@almasdepombagira" target="_blank">
+        <i class="fas fa-comments"></i>
+        <span>Threads</span>
+      </a>
 
-        <blockquote class="message">
-            "Que meus caminhos abram os seus. Respeite quem sou, para eu respeitar quem você é."
-        </blockquote>
+      <a class="link bluesky" href="https://bsky.app/profile/almasdepombagira.bsky.social" target="_blank">
+        <i class="fas fa-feather-alt"></i>
+        <span>Bluesky</span>
+      </a>
 
-        <nav class="links-list" aria-label="Redes sociais e contatos">
-            
-            <a href="https://www.tiktok.com/@espelhosdepombagira" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button tiktok"
-               aria-label="TikTok Espelhos de Pombagira">
-                <span>🎵</span>
-                <span>Espelhos de Pombagira</span>
-            </a>
-            
-            <a href="https://www.tiktok.com/@almasdepombagira" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button tiktok"
-               aria-label="TikTok Almas de Pombagira">
-                <span>🎵</span>
-                <span>Almas de Pombagira</span>
-            </a>
-            
-            <a href="https://www.tiktok.com/@alexiarosadefogo" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button tiktok"
-               aria-label="TikTok Alexia Rosa de Fogo">
-                <span>🎵</span>
-                <span>Alexia Rosa de Fogo</span>
-            </a>
+      <a class="link telegram" href="https://t.me/pomba_giras" target="_blank">
+        <i class="fab fa-telegram-plane"></i>
+        <span>Telegram</span>
+      </a>
+      
+      <a class="link whatsapp" href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+      
+      <a class="link discord" href="https://discord.gg/gWZP8R7Dqu" target="_blank">
+        <i class="fab fa-discord"></i>
+        <span>Discord</span>
+      </a>
+      
+      <a class="link pinterest" href="https://br.pinterest.com/almasdepombagira" target="_blank">
+        <i class="fab fa-pinterest"></i>
+        <span>Pinterest</span>
+      </a>
+      
+      <a class="link meta" href="https://www.meta.ai/@alexiamelusine" target="_blank">
+        <i class="fas fa-robot"></i>
+        <span>Meta AI</span>
+      </a>
+      
+      <a class="link sora" href="https://sora.chatgpt.com/profile/alexialuzdeferro" target="_blank">
+        <i class="fas fa-magic"></i>
+        <span>Sora / ChatGPT</span>
+      </a>
+    </nav>
+  </div>
 
-            <a href="https://www.youtube.com/@almasdepombagira" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button youtube"
-               aria-label="YouTube Almas de Pombagira">
-                <span>▶️</span>
-                <span>YouTube</span>
-            </a>
+  <footer>
+    © 2026 • Almas de Pombagira - Todos os direitos reservados - By: Alexia Melusine
+  </footer>
 
-            <a href="https://www.instagram.com/almasdepombagira" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button instagram"
-               aria-label="Instagram">
-                <span>📸</span>
-                <span>Instagram</span>
-            </a>
-            
-            <a href="https://www.threads.com/@almasdepombagira" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button threads"
-               aria-label="Threads">
-                <span>@</span>
-                <span>Threads</span>
-            </a>
+</main>
 
-            <a href="https://www.kwai.com/@AlmasdePombagira" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button kwai"
-               aria-label="Kwai Almas de Pombagira">
-                <span>🎬</span>
-                <span>Kwai</span>
-            </a>
-            
-            <a href="https://www.kwai.com/@AlexiaRosadeFogo" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button kwai"
-               aria-label="Kwai Alexia Rosa de Fogo">
-                <span>🎬</span>
-                <span>Alexia Rosa de Fogo</span>
-            </a>
+<script>
+// Adiciona partículas decorativas
+document.addEventListener('DOMContentLoaded', function() {
+  const particulasContainer = document.getElementById('particulas');
+  const numParticulas = 25;
+  
+  for (let i = 0; i < numParticulas; i++) {
+    const particula = document.createElement('div');
+    particula.classList.add('particula');
+    
+    // Posição aleatória
+    const posX = Math.random() * 100;
+    const posY = Math.random() * 100;
+    const tamanho = Math.random() * 3 + 1;
+    const duracao = Math.random() * 20 + 10;
+    const atraso = Math.random() * 5;
+    
+    particula.style.left = `${posX}vw`;
+    particula.style.top = `${posY}vh`;
+    particula.style.width = `${tamanho}px`;
+    particula.style.height = `${tamanho}px`;
+    particula.style.animation = `flutuar ${duracao}s infinite ease-in-out ${atraso}s`;
+    particula.style.opacity = Math.random() * 0.5 + 0.2;
+    
+    // Cor aleatória entre dourado, roxo e vermelho
+    const cores = ['#d4af37', '#7a1f7c', '#a50021'];
+    particula.style.backgroundColor = cores[Math.floor(Math.random() * cores.length)];
+    
+    particulasContainer.appendChild(particula);
+  }
+  
+  // Adiciona efeito de clique nos botões
+  const links = document.querySelectorAll('.link, .botao-bio, .botao-destaque');
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Efeito de onda
+      const ripple = document.createElement('span');
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size/2;
+      const y = e.clientY - rect.top - size/2;
+      
+      ripple.style.position = 'absolute';
+      ripple.style.borderRadius = '50%';
+      ripple.style.background = 'rgba(255,255,255,0.3)';
+      ripple.style.transform = 'scale(0)';
+      ripple.style.animation = 'ripple 0.6s linear';
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      ripple.style.width = `${size}px`;
+      ripple.style.height = `${size}px`;
+      
+      this.appendChild(ripple);
+      
+      // Remove o elemento após a animação
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  });
+  
+  // Efeito de digitação para o subtítulo
+  const subtitulo = document.querySelector('.subtitulo');
+  const textoOriginal = subtitulo.textContent;
+  subtitulo.textContent = '';
+  
+  let i = 0;
+  const velocidadeDigitacao = 50; // ms por caractere
+  
+  function digitar() {
+    if (i < textoOriginal.length) {
+      subtitulo.textContent += textoOriginal.charAt(i);
+      i++;
+      setTimeout(digitar, velocidadeDigitacao);
+    }
+  }
+  
+  // Inicia a digitação após 1 segundo
+  setTimeout(digitar, 1000);
+  
+  // Adiciona animação de entrada para os grupos
+  const grupos = document.querySelectorAll('.grupo-links');
+  grupos.forEach((grupo, index) => {
+    grupo.style.opacity = '0';
+    grupo.style.transform = 'translateY(20px)';
+    
+    setTimeout(() => {
+      grupo.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      grupo.style.opacity = '1';
+      grupo.style.transform = 'translateY(0)';
+    }, 300 + (index * 300));
+  });
+});
 
-            <a href="https://t.me/pomba_giras" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button telegram"
-               aria-label="Canal Telegram">
-                <span>✈️</span>
-                <span>Telegram</span>
-            </a>
-            
-            <a href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button whatsapp"
-               aria-label="Canal WhatsApp">
-                <span>💬</span>
-                <span>Canal WhatsApp</span>
-            </a>
-
-            <a href="https://discord.gg/gWZP8R7Dqu" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button discord"
-               aria-label="Discord Servidor">
-                <span>🎧</span>
-                <span>Discord</span>
-            </a>
-
-            <a href="https://br.pinterest.com/almasdepombagira" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button pinterest"
-               aria-label="Pinterest">
-                <span>📌</span>
-                <span>Pinterest</span>
-            </a>
-
-            <a href="https://www.meta.ai/@alexiamelusine" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button meta-ai"
-               aria-label="Meta AI Alexia Melusine">
-                <span>🤖</span>
-                <span>Meta AI</span>
-            </a>
-            
-            <a href="https://sora.chatgpt.com/profile/alexialuzdeferro" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="link-button sora-ai"
-               aria-label="Sora AI Alexia Luz de Ferro">
-                <span>✨</span>
-                <span>Sora/ChatGPT</span>
-            </a>
-
-        </nav>
-    </main>
-
-    <script>
-        // ==================== INICIALIZAÇÃO ====================
-        document.addEventListener('DOMContentLoaded', () => {
-            const loader = document.getElementById('loader');
-            const profilePic = document.getElementById('profilePic');
-            const buttons = document.querySelectorAll('.link-button');
-
-            // Remove loader
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    loader.classList.add('hidden');
-                }, 200);
-            });
-
-            // Fallback se página já carregou
-            if (document.readyState === 'complete') {
-                loader.classList.add('hidden');
-            }
-
-            // ==================== PLACEHOLDER DE IMAGEM ====================
-            profilePic.addEventListener('error', function() {
-                const wrapper = this.parentElement;
-                const placeholder = document.createElement('div');
-                placeholder.className = 'profile-placeholder';
-                placeholder.innerHTML = '🔥';
-                placeholder.setAttribute('role', 'img');
-                placeholder.setAttribute('aria-label', 'Símbolo de Pombagira');
-                this.replaceWith(placeholder);
-            });
-
-            // ==================== ANIMAÇÃO DOS BOTÕES ====================
-            buttons.forEach((button, index) => {
-                button.style.animationDelay = `${index * 0.05}s`;
-                
-                // Efeito de clique
-                button.addEventListener('click', function(e) {
-                    // Previne múltiplos cliques
-                    if (this.dataset.clicking) return;
-                    
-                    this.dataset.clicking = 'true';
-                    
-                    // Feedback visual
-                    this.style.transform = 'scale(0.95)';
-                    
-                    setTimeout(() => {
-                        this.style.transform = '';
-                        delete this.dataset.clicking;
-                    }, 150);
-                });
-
-                // Acessibilidade
-                button.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        button.click();
-                    }
-                });
-            });
-
-            // ==================== PREVENÇÃO DE CLIQUE DIREITO ====================
-            document.addEventListener('contextmenu', (e) => {
-                if (e.target.closest('.link-button')) {
-                    e.preventDefault();
-                }
-            });
-
-            // ==================== ANALYTICS (OPCIONAL) ====================
-            buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const platform = this.className.split(' ').find(c => c !== 'link-button');
-                    console.log(`🔗 Link clicado: ${platform || 'desconhecido'}`);
-                    
-                    // Aqui você pode adicionar tracking analytics
-                    // Ex: gtag('event', 'click', { link: platform });
-                });
-            });
-        });
-    </script>
+// Adiciona animação de ripple
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(style);
+</script>
 </body>
 </html>
